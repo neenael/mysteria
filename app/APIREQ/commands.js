@@ -40,7 +40,7 @@ const API_BASE = `${ROOT_PATH}/wp-json/wp/v2`;
 
 
 export async function getCategories() {
-    const res = await fetch(`${API_BASE}/categories`);
+    const res = await fetch(`${API_BASE}/categories?per_page=100`);
     if (!res.ok) throw new Error('Categories error');
     return res.json();
 }
@@ -49,7 +49,7 @@ export async function getCategories() {
 
 export async function getPosts(category = 'all') {
     const res = await fetch(category === 'all'
-        ? `${API_BASE}/posts?_fields=slug,id,link,acf,categories`
+        ? `${API_BASE}/posts?_fields=slug,id,link,acf,categories&per_page=100`
         : `${API_BASE}/posts?categories=${category}&_fields=slug,id,link,acf,categories`,
     );
     if (!res.ok) throw new Error('Posts error');
