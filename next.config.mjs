@@ -4,12 +4,12 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'http',
-                hostname: 'localhost',
-                port: '8888',
-                pathname: '/mysteria/**',
+                hostname: 'u185091.test-handyhost.ru',
+                port: '',
+                pathname: '/api/wp-content/uploads/**',
             },
         ],
     },
-}
+};
 
-export default nextConfig
+export default nextConfig;
