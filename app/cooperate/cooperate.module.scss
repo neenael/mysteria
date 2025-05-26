@@ -1,0 +1,51 @@
+.section{
+  padding: 50px 0;
+  background-image: url('/images/coorporateBg.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+
+
+  @media(max-width: 1200px){
+    padding-bottom: 400px;
+    min-height: initial;
+  }
+
+
+}
+
+.content{
+  max-width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 400px;
+
+  @media(max-width: 1200px){
+    height: max-content;
+    //max-width: 70%;
+  }
+  @media(max-width: 736px){
+    max-width: 100%;
+    padding-bottom: 200px;
+  }
+  @media(max-width: 500px){
+    max-width: 100%;
+    padding-bottom: 100px;
+  }
+}
+.mobileHeading{
+  color:  #1F1E1E;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 63px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+  display: none;
+  @media(max-width: 916px){
+
+    display: block;
+  }
+}

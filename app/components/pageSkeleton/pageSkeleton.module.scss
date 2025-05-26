@@ -1,0 +1,53 @@
+.skeletonWrapper{
+display: flex;
+  flex-direction: column;
+  gap: 17px;
+  height: 80vh;
+  padding-top: 50px;
+
+
+  .thinCol{
+    border-radius: 15px;
+    background: #F4F4F4;
+    backdrop-filter: blur(18px);
+    width: 766px;
+    height: 65px;
+    flex-shrink: 0;
+    animation: pulseBackground 2s infinite ease-in-out;
+    transition: background-color 0.1s ease-in-out;
+
+
+  }
+
+  .boldCol{
+    width: 476px;
+    height: 132px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #F4F4F4;
+    backdrop-filter: blur(18px);
+    animation: pulseBackground 2s infinite ease-in-out;
+    transition: background-color 0.1s ease-in-out;
+  }
+}
+
+
+.dark  {
+  .boldCol, .thinCol{
+    background: rgba(255, 255, 255, 0.30) !important;
+    backdrop-filter: blur(18px);
+  }
+
+}
+
+@keyframes pulseBackground {
+  0% {
+    background-color: #F4F4F4;
+  }
+  50% {
+    background-color: #DADADA ;
+  }
+  100% {
+    background-color: #F4F4F4;
+  }
+}

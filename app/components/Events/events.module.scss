@@ -1,0 +1,115 @@
+.categoriesSet{
+  display: flex;
+  gap: 15px;
+  margin-bottom: 37px;
+  flex-wrap: wrap;
+}
+.wrapper{
+  padding-bottom: 50px;
+}
+.badge{
+  padding: 7px 17px;
+  border-radius: 100px;
+  border: 1px solid #FFF;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  
+  &.active{
+    background-color: #fff;
+    color: #1F1E1E;
+  }
+
+}
+
+.eventCards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+
+  @media(max-width: 1100px){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media(max-width: 781px){
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+
+  .eventCard{
+    border-radius: 27.806px;
+    height: 270px;
+    padding: 20px 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #FFF;
+    position: relative;
+    transition: transform .1s ease-in-out;
+
+    &:hover{
+      transform: scale(1.01);
+    }
+    h3{
+      font-family: var(--font-bebas), sans-serif;
+
+      font-size: 28.397px;
+      font-weight: 400;
+      line-height: 70%;
+      margin-bottom: 5px;
+    }
+
+    .eventInfoRows{
+      display: flex;
+      flex-direction: column;
+      font-size: 13.329px;
+
+      span{
+        display: flex;
+        align-items: center;
+      }
+      svg{
+        margin-right: 4px;
+      }
+    }
+
+
+    .signupBtn{
+      border-radius: 86.893px;
+      background: rgba(255, 255, 255, 0.40);
+      box-shadow: 0px 2.781px 41.708px 0px rgba(0, 0, 0, 0.40);
+      backdrop-filter: blur(12.512541770935059px);
+      padding: 12px 23px;
+      max-width: max-content;
+      color: #FFF;
+      font-size: 15.51px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      transition: color .1s ease-in-out, background-color .1s ease-in-out;
+      &:hover{
+        color: #1F1E1E;
+        background-color: #fff;
+      }
+    }
+
+  }
+}
+
+.mobileHeading{
+  display: none;
+  color: #FFF;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 93.922px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 28px;
+  @media(max-width: 916px){
+    display: block;
+  }
+}

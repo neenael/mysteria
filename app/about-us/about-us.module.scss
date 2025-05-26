@@ -1,0 +1,70 @@
+.section{
+  padding: 50px 0;
+
+  background-image: url('/images/about-usBg.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 50%;
+  .AboutContainer{
+    //height: 100%;
+    //min-height: 100vh;
+  }
+
+  @media(max-width: 1200px){
+    padding-bottom: 400px;
+    min-height: initial;
+    //background-size: 100%;
+  }
+
+  @media(max-width: 736px){
+
+    background-size: 100%;
+  }
+
+
+}
+.content{
+  max-width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media(max-width: 1200px){
+    height: max-content;
+    max-width: 70%;
+  }
+  @media(max-width: 736px){
+    max-width: 100%;
+  }
+}
+
+.photos{
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  max-height: max-content;
+  margin-top: 70px;
+  @media(max-width: 736px){
+
+   flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+}
+
+.mobileHeading{
+  color:  #1F1E1E;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 63px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+  display: none;
+  @media(max-width: 916px){
+
+    display: block;
+  }
+}

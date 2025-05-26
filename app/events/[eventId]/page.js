@@ -1,29 +1,38 @@
-'use client'
-import { useEffect, useState, use } from 'react';
-import {getCategories, getPostBySlug} from "@/app/API/commands";
-export default function PostPage({params}) {
-    const { eventId } = use(params);
-    const [post, setPost] = useState(null);
+import { getPostBySlug } from "@/app/APIREQ/commands";
+import { notFound } from "next/navigation";
+import styles from '../eventPage.module.scss'
+import Link from "next/link";
+import LocationSVG from "@/app/components/SVG/LocationSVG";
+import CalendarSvg from "@/app/components/SVG/CalendarSvg";
+import TicketSvg from "@/app/components/SVG/TicketSVG";
+import Slider from "@/app/components/Slider/Slider";
+import EventHeroSection from "@/app/events/sections/EventHeroSection";
+import {useStore} from "@/app/store/layoutStore";
+import Timeline from "@/app/events/sections/Timeline";
+import FullImage from "@/app/events/sections/FullImage";
+import RegistrationForm from "@/app/events/sections/RegistrationForm";
+import Home from "@/app/events/sections/RegistrationForm";
+export default async function PostPage({ params }) {
+    const eventId = params.eventId;
 
-    useEffect(() => {
-        if (!eventId) return;
+    const post = await getPostBySlug(eventId);
 
-        const fetchPost = async () => {
-            const data = await getPostBySlug(eventId);
-            setPost(data);
-        };
-        fetchPost();
+    if (!post) {
+        notFound();
+    }
 
 
 
-    }, [eventId]);
-
-    if (!post) return <p>Загрузка...</p>;
 
     return (
-        <div>
-            <h1>{post.title.rendered}</h1>
-           <p>{post.acf.mode}</p>
-        </div>
+        <>
+            <EventHeroSection post={post}/>
+            {post.acf.add_time_line && <Timeline data={post.acf.time_line_points} />}
+            {post.acf.add_wide_view_image && <FullImage src={post.acf.wide_view_image.url}/>}
+            {post.acf.open_registration &&
+                <RegistrationForm event_name={post.acf.title} event_id={post.id} form_request={post.acf.forms}/>}
+
+
+        </>
     );
 }

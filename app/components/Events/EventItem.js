@@ -3,13 +3,13 @@ import LocationSVG from "@/app/components/SVG/LocationSVG";
 import CalendarSvg from "@/app/components/SVG/CalendarSvg";
 import Link from "next/link";
 
-const Event = ({post}) => {
+const EventItem = ({title, slug, thumbnailUrl,  address, time, status}) => {
     return (
-        <Link key={post.slug}
-              href={`/events/${post.slug}`}
+        <Link
+              href={`/events/${slug}`}
               className={styles.eventCard}
               style={{
-                  backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%), url(${post.acf.thumbnail.url})`,
+                  backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%), url(${thumbnailUrl})`,
                   backgroundColor: 'lightgray',
                   backgroundPosition: '50%',
                   backgroundSize: 'cover',
@@ -18,19 +18,19 @@ const Event = ({post}) => {
         >
 
 
-            <h3>{post.acf.title}</h3>
+            <h3>{title}</h3>
             <div className={styles.eventInfoRows}>
-                <span><LocationSVG/>{post.acf.event_info.address}</span>
-                <span><CalendarSvg />{post.acf.event_info.date_and_time}</span>
+                <span><LocationSVG color={"#fff"} size={13}/>{address}</span>
+                <span><CalendarSvg color={"#fff"} size={13}/>{time}</span>
             </div>
 
-            {post.acf.status === 'open' &&
+            {status === 'open' &&
                 <div className={styles.signupBtn}>
                     Sign up
                 </div>
             }
 
-            {post.acf.status === 'registration_closed' &&
+            {status === 'registration_closed' &&
                 <div className={styles.signupBtn}>
                     Sold out
                 </div>
@@ -41,4 +41,4 @@ const Event = ({post}) => {
     );
 };
 
-export default Event;
+export default EventItem;

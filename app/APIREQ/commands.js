@@ -1,4 +1,4 @@
-import ROOT_PATH from "@/app/api/rootPath";
+import ROOT_PATH from "@/app/APIREQ/rootPath";
 const API_BASE = `${ROOT_PATH}/wp-json/wp/v2`;
 
 
@@ -131,6 +131,20 @@ export async function getImpresumPage() {
     return data[0];
 }
 
+export async function getRulesPage() {
+    const res = await fetch(`${API_BASE}/pages?slug=rules`);
+
+    if (!res.ok) {
+        throw new Error('Не удалось получить страницу "О нас"');
+    }
+
+    const data = await res.json();
+
+    return data[0];
+}
+
+
+
 export async function getDatenschutzerklarungPage() {
     const res = await fetch(`${API_BASE}/pages?slug=datenschutzerklarung`);
 
@@ -146,3 +160,21 @@ export async function getDatenschutzerklarungPage() {
 
 
 
+
+export async function getPostLinkByID(id) {
+    const res = await fetch(`${API_BASE}/posts/${id}?_fields=link`);
+    if (!res.ok) throw new Error('ID post error');
+    const data = await res.json();
+
+
+    return data.link || null;
+}
+
+export async function getPageBySlugD(slug) {
+    const res = await fetch(`${API_BASE}/pages?slug=${slug}`);
+    if (!res.ok) throw new Error('Slug page error');
+    const data = await res.json();
+
+
+    return data[0] || null;
+}

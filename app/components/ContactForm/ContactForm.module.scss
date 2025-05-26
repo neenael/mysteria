@@ -1,0 +1,127 @@
+
+.formSection{
+  padding: 50px 0;
+  color: #fff;
+}
+
+.formWrapper{
+  border-radius: 40px;
+  background: #1F1E1E;
+  width: 100%;
+  padding: 39px 48px;
+  background-repeat: no-repeat;
+  background-position: 100% bottom;
+  background-size: auto 100%;
+
+  @media(max-width: 1200px){
+    background-size: auto 100%;
+  }
+
+  @media(max-width: 1000px){
+    background-size: auto 80%;
+  }
+  @media(max-width: 820px){
+    background-size: auto 60%;
+  }
+
+
+  @media(max-width: 666px){
+    background-position: center bottom;
+    border-radius: 15px;
+    padding: 14px 17px;
+    padding-bottom: 300px;
+    background-size: auto 60%;
+
+
+  }
+
+  @media(max-width: 500px){
+    background-size: auto 40%;
+  }
+}
+
+
+.regForm{
+
+
+  .formH3{
+    color: #fff;
+    font-family: var(--font-bebas), sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 28px;
+  }
+
+  .inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    width: 50%;
+    max-width: 472px;
+    margin-bottom: 60px;
+
+    @media(max-width: 666px){
+      width: 100%;
+      max-width: 100%;
+      gap: 13px;
+      margin-bottom: 17px;
+
+    }
+
+  }
+
+  .regInput{
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(18px);
+    padding: 20px 33px;
+    border: none;
+    color: #fff;
+    &::placeholder{
+      color: #fff;
+    }
+
+    @media(max-width: 666px){
+      padding: 10px 20px;
+    }
+
+  }
+
+  .sentBtn{
+    border-radius: 150.424px;
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(18px);
+    padding: 19.254px 40.915px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    max-width: max-content;
+    @media(max-width: 666px){
+      padding: 11px;
+      max-width: max-content;
+    }
+
+  }}
+
+
+
+.signUpBtn{
+  border-radius: 150.424px;
+  background: #C20037;
+  display: flex;
+  padding: 19.254px 40.915px;
+  justify-content: center;
+  align-items: center;
+  gap: 12.034px;
+  color: #fff;
+  &[disabled]{
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

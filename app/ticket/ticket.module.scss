@@ -1,0 +1,133 @@
+.ticketContainer{
+  color: #1F1E1E;
+}
+
+.ticketSection{
+  padding: 50px 0;
+
+  background-image: url('/images/regFormBg.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+
+  @media (max-width: 917px) {
+    background-image: none;
+  }
+
+}
+.ticketWrapper{
+  border-radius: 40px;
+  background: #FFF;
+  max-width: 530px;
+  width: 100%;
+
+  min-width: 320px;
+  @media (max-width: 917px) {
+    margin: 0 auto;
+    border-radius: 15px;
+  }
+
+}
+
+.headWrapper{
+  padding: 40px;
+  @media (max-width: 917px) {
+    padding: 17px;
+  }
+
+  .ticketFor{
+    font-family: var(--font-bebas), sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    @media (max-width: 917px) {
+      font-size: 24px;
+    }
+  }
+
+  .eventName{
+    color: #C20037;
+    font-family: var(--font-bebas), sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 19px;
+    display: block;
+    @media (max-width: 917px) {
+      font-size: 48px;
+    }
+    @media (max-width: 917px) {
+      font-size: 32px;
+    }
+  }
+
+  .name{
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    margin-bottom: 33px;
+    @media (max-width: 917px) {
+      font-size: 32px;
+    }
+  }
+
+  .email{
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    margin-bottom: 9px;
+    @media (max-width: 917px) {
+      font-size: 16px;
+    }
+  }
+  .phone{
+
+    font-size: 20px;
+    font-style: normal;
+    display: block;
+    font-weight: 400;
+    line-height: normal;
+    @media (max-width: 917px) {
+      font-size: 16px;
+    }
+  }
+}
+.barcode{
+  width: 100%;
+  height: 82px;
+  background-image: url('/images/barcode.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 86px;
+  @media (max-width: 917px) {
+    margin-top: 30px;
+  }
+}
+
+.bottomWrapper{
+  border-top: 7px dotted #ECECEC;
+  padding: 40px;
+
+  @media (max-width: 917px) {
+    padding: 17px;
+  }
+  .metaInfo{
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    &:not(:last-child){
+      margin-bottom: 5px;
+    }
+  }
+}

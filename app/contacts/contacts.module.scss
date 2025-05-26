@@ -1,0 +1,18 @@
+.mobileHeading{
+  color:  #1F1E1E;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 63px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+  display: none;
+  @media(max-width: 916px){
+
+    display: block;
+  }
+}
+
+.contactsSection{
+  padding: 50px 0;
+}

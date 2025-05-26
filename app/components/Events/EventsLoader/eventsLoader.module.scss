@@ -1,0 +1,62 @@
+.card{
+  border-radius: 27.806px;
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(18px);
+  height: 270px;
+  padding: 20px 27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #FFF;
+  position: relative;
+  animation: pulseBackground 2s infinite ease-in-out;
+  transition: background-color 0.8s ease-in-out;
+
+  .title{
+    width: 187px;
+    height: 2rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.10);
+    margin-bottom: 11px;
+  }
+  .rows{
+
+  }
+  .rowLocation{
+    width: 130px;
+    height: 15px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.10);
+    margin-bottom: 3px;
+  }
+
+  .rowTime{
+    width: 114px;
+    height: 15px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.10);
+  }
+
+}
+
+.button{
+  border-radius: 86.893px;
+  background: rgba(255, 255, 255, 0.10);
+  width: 107.27px;
+  height: 41.245px;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+@keyframes pulseBackground {
+  0% {
+    background-color: rgba(255, 255, 255, 0.20);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.10);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.20);
+  }
+}
