@@ -3,7 +3,7 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: 'http',
+                protocol: 'https',
                 hostname: 'u185091.test-handyhost.ru',
                 port: '',
                 pathname: '/api/wp-content/uploads/**',
