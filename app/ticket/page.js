@@ -6,7 +6,6 @@ import PageSkeleton from "@/app/components/pageSkeleton/pageSkeleton";
 
 export function TicketPage() {
     return (
-        // You could have a loading skeleton as the `fallback` too
         <Suspense fallback={<PageSkeleton mode={'dark'} />}>
             <TicketPageRender />
         </Suspense>
