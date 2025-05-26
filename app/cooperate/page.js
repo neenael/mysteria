@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 import {getCooperatePage} from "@/app/APIREQ/commands";
 import styles from './cooperate.module.scss'
 import PageSkeleton from "@/app/components/pageSkeleton/pageSkeleton";
+import HTMLContent from "@/app/components/HTMLParser/HTMLParser";
 export default function CooperatePage() {
     const [page, setPage] = useState(null);
 
@@ -19,7 +20,9 @@ export default function CooperatePage() {
 
                 <div className={styles.content}>
                     <h1 className={styles.mobileHeading}>Cooperate</h1>
-                    <p>{page.acf.text}</p>
+
+                    <HTMLContent html={page.acf.text} />
+
                 </div>
 
             </div>

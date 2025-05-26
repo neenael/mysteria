@@ -5,6 +5,7 @@ import {getContactsPage} from "@/app/APIREQ/commands";
 import PageSkeleton from "@/app/components/pageSkeleton/pageSkeleton";
 import ContactForm from "@/app/components/ContactForm/ContactForm";
 import styles from './contacts.module.scss'
+import HTMLContent from "@/app/components/HTMLParser/HTMLParser";
 export default function ContactsUsPage() {
     const [page, setPage] = useState(null);
 
@@ -18,10 +19,7 @@ export default function ContactsUsPage() {
         <section className={styles.contactsSection}>
             <div className="container">
                 <h1 className={styles.mobileHeading}>{page.title.rendered}</h1>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A possimus voluptates sapiente ex dolor modi voluptatum. Laborum provident, voluptate amet asperiores officiis cupiditate ratione pariatur numquam eius deserunt nihil velit, nostrum, perspiciatis nam fugiat odit dolor! Temporibus, laudantium autem.
-                </p>
+                <HTMLContent html={page.acf.text} />
 
                 <ContactForm />
             </div>

@@ -27,7 +27,7 @@ const Footer = (props) => {
                                     Events
                                 </Link>
 
-                                <Link href={'/'}>
+                                <Link href={'https://www.instagram.com/mysteria_vienna/'}>
                                     <InstaSvg/>
                                 </Link>
 

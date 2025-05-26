@@ -15,6 +15,17 @@ export default function Events({skeletonNumber}) {
     const [categories, setCategories] = useState([]);
     const [selectedCat, setSelectedCat] = useState('all');
     const [loading, setLoading] = useState(true);
+    const [showAllCategories, setShowAllCategories] = useState(false);
+
+    const reorderedCategories = [
+        ...categories.filter((cat) => cat.id === selectedCat),
+        ...categories.filter((cat) => cat.id !== selectedCat),
+    ];
+
+    const visibleCategories = showAllCategories
+        ? reorderedCategories
+        : reorderedCategories.slice(0, 5);
+
 
     const fetchData = async () => {
         setLoading(true);
@@ -45,7 +56,7 @@ export default function Events({skeletonNumber}) {
                     All events
                 </button>
 
-                {categories.map((cat) => (
+                {visibleCategories.map((cat) => (
                     <button
                         key={cat.id}
                         className={cat.id === selectedCat ? `${styles.active} ${styles.badge}` : styles.badge}
@@ -54,6 +65,15 @@ export default function Events({skeletonNumber}) {
 
                     </button>
                 ))}
+
+                {categories.length > 5 && (
+                    <button
+                        className={styles.seeMoreButton}
+                        onClick={() => setShowAllCategories(!showAllCategories)}
+                    >
+                        {showAllCategories ? 'Show less' : 'See more categories'}
+                    </button>
+                )}
             </div>
 
             {loading ? (

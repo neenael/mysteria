@@ -44,7 +44,7 @@ export default function RegistrationForm({event_name, event_id, form_request}) {
         });
 
         const data = await res.json();
-        alert(data.message);
+        // alert(data.message);
         setLoading(false);
 
         if (data.state === 'sent'){

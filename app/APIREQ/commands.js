@@ -30,15 +30,6 @@ const API_BASE = `${ROOT_PATH}/wp-json/wp/v2`;
 
 
 
-
-
-
-
-
-
-
-
-
 export async function getCategories() {
     const res = await fetch(`${API_BASE}/categories?per_page=100`);
     if (!res.ok) throw new Error('Categories error');
