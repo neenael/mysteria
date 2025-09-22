@@ -4,9 +4,9 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'u185091.test-handyhost.ru',
+                hostname: 'u190639.test-handyhost.ru',
                 port: '',
-                pathname: '/api/wp-content/uploads/**',
+                pathname: '/wp-content/uploads/**',
             },
         ],
     },

@@ -1,3 +1,3 @@
-const ROOT_PATH= "https://u185091.test-handyhost.ru/api";
+const ROOT_PATH= "https://u190639.test-handyhost.ru";
 
 export default ROOT_PATH
