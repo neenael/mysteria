@@ -21,10 +21,12 @@ export default function AboutUsPage() {
                 <h2 className={styles.mobileHeading}>About us</h2>
 
                 <div className={styles.content}>
-                    <p className={styles.descr}>{page.acf.descriprion}</p>
+                    <p className={`${styles.descr} fadeInUp`}>
+                        {page.acf.descriprion}
+                    </p>
 
                     {!page.acf.anon_mode &&
-                        <div className={styles.photos}>
+                        <div className={`${styles.photos} fadeInUp`}>
                         <Image src={page.acf.sergeis_photo} alt={"Sergei"} width={300} height={0} style={{ height: '100%' }}/>
                             <Image src={page.acf.sophies_photo} alt={"Sophie"} width={300}  height={0} style={{ height: '100%' }}/>
 

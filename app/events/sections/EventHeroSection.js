@@ -8,7 +8,7 @@ import Slider from "@/app/components/Slider/Slider";
 
 const EventHeroSection = ({post}) => {
     return (
-        <section className={styles.eventHero}>
+        <section className={`${styles.eventHero} fadeInUp`}>
             <div className={styles.bgImage}></div>
 
             <div className={`${styles.heroContainer} container`}>

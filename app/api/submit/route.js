@@ -3,9 +3,6 @@ import QRCode from 'qrcode';
 import FRONT_PATH from "@/app/APIREQ/frontPath";
 import {console} from "next/dist/compiled/@edge-runtime/primitives";
 export async function POST(request) {
-    console.log('✅ API вызван!');
-
-    // Сначала читаем JSON
     let name, email, phone, event_name, event_id, ticket_id, form_request;
 
     const date = new Date().toLocaleString('en-GB', {
@@ -37,7 +34,6 @@ export async function POST(request) {
         return Response.json({ message: 'Ошибка генерации QR-кода' }, { status: 500 });
     }
 
-    // Отправка Email
     try {
         const transporter = nodemailer.createTransport({
             service: 'gmail',

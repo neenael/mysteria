@@ -1,5 +1,4 @@
-'use client'// import styles from "./page.module.css";
-import Link from "next/link";
+'use client'
 import {useState, useEffect} from "react";
 import {getContactsPage} from "@/app/APIREQ/commands";
 import PageSkeleton from "@/app/components/pageSkeleton/pageSkeleton";
@@ -17,11 +16,11 @@ export default function ContactsUsPage() {
 
     return (
         <section className={styles.contactsSection}>
-            <div className="container">
+            <div className="container fadeInUp">
                 <h1 className={styles.mobileHeading}>{page.title.rendered}</h1>
-                <HTMLContent html={page.acf.text} />
+                <HTMLContent className={'animate__animated animate__fadeIn'} html={page.acf.text} />
 
-                <ContactForm />
+                <ContactForm className={'animate__animated animate__fadeIn'} />
             </div>
 
         </section>

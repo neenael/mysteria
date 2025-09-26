@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './ContactForm.module.scss'
 import Link from "next/link";
-export default function ContactForm() {
+export default function ContactForm({className}) {
     const [name , setName] = useState('')
     const [email , setEmail] = useState('')
     const [message , setMessage] = useState('')
@@ -50,7 +50,7 @@ export default function ContactForm() {
 
     return (
 
-        <section className={styles.formSection} id='sign-up'>
+        <section className={`${className} ${styles.formSection}`} id='sign-up'>
             <div className="container">
                 <div className={styles.formWrapper} style={{backgroundImage: `url(/images/contactFormBg.png)`}}>
                     <form onSubmit={handleSubmit} className={styles.regForm}>

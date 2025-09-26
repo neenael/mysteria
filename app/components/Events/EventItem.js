@@ -4,10 +4,11 @@ import CalendarSvg from "@/app/components/SVG/CalendarSvg";
 import Link from "next/link";
 
 const EventItem = ({title, slug, thumbnailUrl,  address, time, status}) => {
+
     return (
         <Link
               href={`/events/${slug}`}
-              className={styles.eventCard}
+              className={`${styles.eventCard} fadeInUp`}
               style={{
                   backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%), url(${thumbnailUrl})`,
                   backgroundColor: 'lightgray',

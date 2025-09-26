@@ -18,7 +18,7 @@ export default function GalleryPage() {
     return (
         <section>
 
-            <div className="container">
+            <div className="container fadeInUp">
                 <h1 className={styles.mobileHeading}>{page.title.rendered}</h1>
                 <Slider photos={page.acf.gallery} height={450}/>
             </div>

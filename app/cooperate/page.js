@@ -18,7 +18,7 @@ export default function CooperatePage() {
         <section className={styles.section}>
             <div className={'container'}>
 
-                <div className={styles.content}>
+                <div className={`${styles.content} fadeInUp`}>
                     <h1 className={styles.mobileHeading}>Cooperate</h1>
 
                     <HTMLContent html={page.acf.text} />

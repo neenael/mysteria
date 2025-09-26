@@ -2,7 +2,7 @@ import styles from './eventsLoader.module.scss'
 
 const EventLoaderItem = () => {
     return (
-        <div className={styles.card}>
+        <div className={`${styles.card} fadeInUp`}>
 
             <div className={styles.title}></div>
             <div className={styles.rows}>
