@@ -93,15 +93,16 @@ export default function Events({skeletonNumber}) {
 
                     {posts.map((post) => (
 
-                        post.acf.status === 'hided' ? '' :
+                        post.acf.status === 'hidden' ? '' :
                             (<EventItem
                            slug={post.slug}
-                           thumbnailUrl={post.acf.thumbnail.url}
+                           thumbnailUrl={post.acf.thumbnail}
                            time={post.acf.event_info.date_and_time}
                            address={post.acf.event_info.address}
                            title={post.acf.title}
-                           status={post.acf.status}
-                           key={post.id}/>)
+                           key={post.id}
+                           is_reg_open={post.acf.open_registration}
+                            />)
                     ))}
 
 

@@ -44,11 +44,9 @@ export default function RegistrationForm({event_name, event_id, form_request}) {
         });
 
         const data = await res.json();
-        // alert(data.message);
         setLoading(false);
 
         if (data.state === 'sent'){
-
             setName('')
             setEmail('')
             setPhone('')
@@ -80,7 +78,7 @@ export default function RegistrationForm({event_name, event_id, form_request}) {
                         {isSent
                             ? <span className={styles.sentBtn}>We’ve sent your ticket to your email</span>
                             : <button className={styles.signUpBtn} disabled={!isReadyToSend}
-                                      type="submit">{loading ? 'Pending...' : 'Sign up'}</button>
+                                      type="submit">{loading ? 'Sending...' : 'Sign up'}</button>
                         }
 
 

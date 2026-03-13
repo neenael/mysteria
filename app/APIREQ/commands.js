@@ -10,8 +10,8 @@ export async function getCategories() {
 
 export async function getPosts(category = 'all') {
     const res = await fetch(category === 'all'
-        ? `${API_BASE}/posts?_fields=slug,id,link,acf,categories&per_page=100`
-        : `${API_BASE}/posts?categories=${category}&_fields=slug,id,link,acf,categories`,
+        ? `${API_BASE}/posts?acf_format=standard&_fields=slug,id,link,acf,categories&per_page=100`
+        : `${API_BASE}/posts?acf_format=standard&categories=${category}&_fields=slug,id,link,acf,categories`,
         {
             cache: "force-cache",
             next: { revalidate: 30 }
@@ -22,7 +22,7 @@ export async function getPosts(category = 'all') {
 
 
 export async function getPostBySlug(slug) {
-    const res = await fetch(`${API_BASE}/posts?slug=${slug}`,
+    const res = await fetch(`${API_BASE}/posts?acf_format=standard&slug=${slug}`,
         {
             cache: "force-cache",
             next: { revalidate: 60 }
@@ -34,7 +34,7 @@ export async function getPostBySlug(slug) {
 
 
 export async function getAboutUsPage() {
-    const res = await fetch(`${API_BASE}/pages?slug=about-us`, {
+    const res = await fetch(`${API_BASE}/pages?acf_format=standard&slug=about-us`, {
         cache: "force-cache",
         next: { revalidate: 60 }
     });
@@ -47,7 +47,7 @@ export async function getAboutUsPage() {
     return data[0];
 }
 export async function getContactsPage() {
-    const res = await fetch(`${API_BASE}/pages?slug=contacts`,
+    const res = await fetch(`${API_BASE}/pages?acf_format=standard&slug=contacts`,
         {
             cache: "force-cache",
             next: { revalidate: 86400 }
@@ -62,7 +62,7 @@ export async function getContactsPage() {
 }
 
 export async function getCooperatePage() {
-    const res = await fetch(`${API_BASE}/pages?slug=cooperate`,
+    const res = await fetch(`${API_BASE}/pages?acf_format=standard&slug=cooperate`,
         {
             cache: "force-cache",
             next: { revalidate: 86400 }
@@ -77,7 +77,7 @@ export async function getCooperatePage() {
 }
 
 export async function getGalleryPage() {
-    const res = await fetch(`${API_BASE}/pages?slug=gallery`,
+    const res = await fetch(`${API_BASE}/pages?acf_format=standard&slug=gallery`,
         {
             cache: "force-cache",
             next: { revalidate: 60 }
@@ -92,7 +92,7 @@ export async function getGalleryPage() {
 }
 
 export async function getImpresumPage() {
-    const res = await fetch(`${API_BASE}/pages?slug=impressum`,
+    const res = await fetch(`${API_BASE}/pages?acf_format=standard&slug=impressum`,
         {
             cache: "force-cache",
             next: { revalidate: 86400 }
@@ -107,7 +107,7 @@ export async function getImpresumPage() {
 }
 
 export async function getRulesPage() {
-    const res = await fetch(`${API_BASE}/pages?slug=rules`,
+    const res = await fetch(`${API_BASE}/pages?acf_format=standard&slug=rules`,
         {
             cache: "force-cache",
             next: { revalidate: 86400 }
@@ -125,7 +125,7 @@ export async function getRulesPage() {
 
 
 export async function getDatenschutzerklarungPage() {
-    const res = await fetch(`${API_BASE}/pages?slug=datenschutzerklarung`,
+    const res = await fetch(`${API_BASE}/pages?acf_format=standard&slug=datenschutzerklarung`,
         {
             cache: "force-cache",
             next: { revalidate: 86400 }
@@ -137,7 +137,6 @@ export async function getDatenschutzerklarungPage() {
 
     const data = await res.json();
 
-    // Обычно возвращается массив из одного элемента
     return data[0];
 }
 

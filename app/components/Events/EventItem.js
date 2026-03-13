@@ -3,7 +3,7 @@ import LocationSVG from "@/app/components/SVG/LocationSVG";
 import CalendarSvg from "@/app/components/SVG/CalendarSvg";
 import Link from "next/link";
 
-const EventItem = ({title, slug, thumbnailUrl,  address, time, status}) => {
+const EventItem = ({title, slug, thumbnailUrl,  address, time, is_reg_open}) => {
 
     return (
         <Link
@@ -25,13 +25,13 @@ const EventItem = ({title, slug, thumbnailUrl,  address, time, status}) => {
                 <span><CalendarSvg color={"#fff"} size={13}/>{time}</span>
             </div>
 
-            {status === 'open' &&
+            {is_reg_open &&
                 <div className={styles.signupBtn}>
                     Sign up
                 </div>
             }
 
-            {status === 'registration_closed' &&
+            {!is_reg_open &&
                 <div className={styles.signupBtn}>
                     Sold out
                 </div>

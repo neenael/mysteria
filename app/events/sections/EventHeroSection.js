@@ -15,9 +15,13 @@ const EventHeroSection = ({post}) => {
 
                 <div className={styles.headingRow}>
                     <h1>{post.acf.title}</h1>
-                    <Link href={"#sign-up"} className={styles.signUpBtn}>
-                        Sign up
-                    </Link>
+                    {
+                        post.acf.open_registration &&
+                            <Link href={"#sign-up"} className={styles.signUpBtn}>
+                                Sign up
+                            </Link>
+                    }
+
                 </div>
 
                 <div className={styles.badges}>

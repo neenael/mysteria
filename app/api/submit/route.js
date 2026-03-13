@@ -17,9 +17,9 @@ export async function POST(request) {
     try {
         const body = await request.json();
         ({ name, email, phone, event_name, event_id, ticket_id, form_request } = body);
-        console.log('✅ Получены данные формы:', body);
+        console.log('Получены данные формы:', body);
     } catch (error) {
-        console.error('❌ Ошибка чтения JSON:', error);
+        console.error('Ошибка чтения JSON:', error);
         return Response.json({ message: 'Невозможно прочитать данные формы' }, { status: 400 });
     }
 
@@ -28,9 +28,9 @@ export async function POST(request) {
     let qr;
     try {
         qr = await QRCode.toDataURL(qrLink);
-        console.log('✅ QR-код сгенерирован');
+        console.log('QR-код сгенерирован');
     } catch (error) {
-        console.error('❌ Ошибка генерации QR:', error);
+        console.error('Ошибка генерации QR:', error);
         return Response.json({ message: 'Ошибка генерации QR-кода' }, { status: 500 });
     }
 
@@ -44,7 +44,7 @@ export async function POST(request) {
         });
 
         await transporter.sendMail({
-            from: `Mysteria Vienna`,
+            from: `Mysteria`,
             to: email,
             subject: 'Confirmation of registration',
             html: `
@@ -76,19 +76,18 @@ export async function POST(request) {
   `,
             attachments: [{
                 filename: 'qr.png',
-                content: qr.split("base64,")[1], // обрезаем заголовок data:image/png;base64,
+                content: qr.split("base64,")[1],
                 encoding: 'base64',
-                cid: 'qr-image', // это ID, по которому мы вставляем в img
+                cid: 'qr-image',
             }]
         });
 
-        console.log('✅ Письмо отправлено на:', email);
+        console.log('Письмо отправлено на:', email);
     } catch (error) {
-        console.error('❌ Ошибка отправки письма:', error);
+        console.error('Ошибка отправки письма:', error);
         return Response.json({ message: 'Ошибка отправки письма' }, { status: 500 });
     }
 
-    // Отправка данных в Google Form
     try {
         const formUrl = form_request.google_forms_link
         const formData = new URLSearchParams();
@@ -106,9 +105,9 @@ export async function POST(request) {
             },
         });
 
-        console.log('✅ Данные отправлены в Google Form. Статус:', googleRes.status);
+        console.log('Данные отправлены в Google Form. Статус:', googleRes.status);
     } catch (error) {
-        console.error('❌ Ошибка отправки в Google Form:', error);
+        console.error('Ошибка отправки в Google Form:', error);
         return Response.json({ message: 'Ошибка отправки данных в Google форму' }, { status: 500 });
     }
 

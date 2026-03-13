@@ -5,6 +5,8 @@ import {getAboutUsPage} from "@/app/APIREQ/commands";
 import styles from './about-us.module.scss'
 import Image from "next/image";
 import PageSkeleton from "@/app/components/pageSkeleton/pageSkeleton";
+import HTMLContent from "@/app/components/HTMLParser/HTMLParser";
+
 export default function AboutUsPage() {
     const [page, setPage] = useState(null);
 
@@ -21,9 +23,7 @@ export default function AboutUsPage() {
                 <h2 className={styles.mobileHeading}>About us</h2>
 
                 <div className={styles.content}>
-                    <p className={`${styles.descr} fadeInUp`}>
-                        {page.acf.descriprion}
-                    </p>
+                    <HTMLContent html={page.acf.descriprion} />
 
                     {!page.acf.anon_mode &&
                         <div className={`${styles.photos} fadeInUp`}>

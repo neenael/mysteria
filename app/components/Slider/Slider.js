@@ -1,13 +1,11 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, FreeMode } from 'swiper/modules';
+import { Navigation, FreeMode, Keyboard, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
-import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-// import 'swiper/css/navigation';
 import styles from './slider.module.scss'
 import Image from "next/image";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 export default function Slider({photos, height}) {
     const [fullscreenImage, setFullscreenImage] = useState(null);
     return (
@@ -35,8 +33,14 @@ export default function Slider({photos, height}) {
             <Swiper slidesPerView={'auto'} spaceBetween={17}
                     grabCursor
                     className={styles.sliderSwiper}
-                    modules={[Navigation, FreeMode]}
+                    modules={[Navigation, FreeMode, Keyboard, Mousewheel]}
                     freeMode={true}
+                    keyboard={{
+                        enabled: true,
+                    }}
+                    mousewheel={{
+                        forceToAxis: true,
+                    }}
                     navigation={{
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
@@ -46,7 +50,7 @@ export default function Slider({photos, height}) {
                     <SwiperSlide key={photo.id} className={styles.slideItem}
                                  onClick={() => setFullscreenImage(photo.url)}>
 
-                            <Image alt={photo.name} src={photo.url}
+                            <Image alt={photo.alt} src={photo.url}
                                    height={height} width={photo.width / photo.height * height}
                                    className={styles.photoItem}/>
 

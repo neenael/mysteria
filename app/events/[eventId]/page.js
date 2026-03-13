@@ -27,12 +27,10 @@ export default async function PostPage({ params }) {
     return (
         <>
             <EventHeroSection post={post}/>
-            {post.acf.add_time_line && <Timeline data={post.acf.time_line_points} />}
-            {post.acf.add_wide_view_image && <FullImage src={post.acf.wide_view_image.url}/>}
-            {post.acf.open_registration &&
-                <RegistrationForm event_name={post.acf.title} event_id={post.id} form_request={post.acf.forms}/>}
-
-
+            {post.acf.add_time_line ? <Timeline data={post.acf.time_line_points} /> : null}
+            {post.acf.add_wide_view_image ? <FullImage src={post.acf.wide_view_image.url}/> : null}
+            {post.acf.open_registration ?
+                <RegistrationForm event_name={post.acf.title} event_id={post.id} form_request={post.acf.forms}/> : null}
         </>
     );
 }
